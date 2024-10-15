@@ -18,9 +18,9 @@ Below is a list of the contests I've participated in, along with links to the co
 
 ## How to Use This Repository
 
-- Each contest has its own folder under `src/prohladenn.vko/`, where you can find solutions for all problems in that contest.
+- Each contest has its own folder under `src/prohladenn/vko/`, where you can find solutions for all problems in that contest.
 - The structure is organized as:
-    - `ProblemA.cpp`, `ProblemB.cpp`, etc., where each file contains the solution for the respective problem.
+    - `ProblemA.java`, `ProblemB.java`, etc., where each file contains the solution for the respective problem.
     - The `_template` folder contains a template for coding new problems.
 
 ## Updates
