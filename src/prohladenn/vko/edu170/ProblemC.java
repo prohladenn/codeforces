@@ -4,8 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class ProblemC {
 
@@ -19,21 +18,32 @@ public class ProblemC {
             int k = fs.nextInt();
             int[] a = fs.readArray(n);
 
-            Arrays.sort(a);
+            Map<Integer, Integer> map = new HashMap<>(n);
+            for (int i = 0; i < n; i++) {
+                map.put(a[i], map.getOrDefault(a[i], 0) + 1);
+            }
 
-            int end, max = 1;
-            for (int start = 0; start < n - 1; start++) {
+            List<Integer> ai = new ArrayList<>(map.keySet());
+            Collections.sort(ai);
 
-                if (start != 0 && a[start] == a[start - 1]) {
-                    continue;
+            int start = 0;
+            int sum = 0;
+            int max = 0;
+            for (int end = 0; end < ai.size(); end++) {
+
+                if (end > 0 && ai.get(end) - ai.get(end - 1) > 1) {
+                    start = end;
+                    sum = 0;
                 }
 
-                end = start + 1;
-                while (end < n && a[end] - a[end - 1] < 2 && a[end] - a[start] < k) {
-                    end++;
+                sum += map.get(ai.get(end));
+
+                while (end - start + 1 > k) {
+                    sum -= map.get(ai.get(start));
+                    start++;
                 }
 
-                max = Math.max(max, end - start);
+                max = Math.max(max, sum);
             }
 
             out.println(max);
