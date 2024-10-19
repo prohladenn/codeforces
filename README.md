@@ -15,8 +15,8 @@ contest.
 
 | Link to Contest                                                         | Link to Solutions                          | Participated | Solved (During Contest) | Solved (After Contest) |
 |-------------------------------------------------------------------------|--------------------------------------------|--------------|-------------------------|------------------------|
-| [Educational Codeforces Round 170](https://codeforces.com/contest/2025) | [Solutions](./src/prohladenn/vko/edu170)   | ✅            | AB/7                    | C                      |
-| [Codeforces Round 979](https://codeforces.com/contest/2030)             | [Solutions](./src/prohladenn/vko/round979) | ✅            | ABC/7                   |                        |
+| [Educational Codeforces Round 170](https://codeforces.com/contest/2025) | [Solutions](./src/prohladenn/vko/edu170)   | ✅            | AB (2/7)                | C (3/7)                |
+| [Codeforces Round 979](https://codeforces.com/contest/2030)             | [Solutions](./src/prohladenn/vko/round979) | ✅            | ABC (3/7)               | D (4/7)                |
 | [Codeforces Round 980](https://codeforces.com/contest/2023)             | N/A                                        | ❌            | N/A                     |                        |
 
 ## How to Use This Repository
