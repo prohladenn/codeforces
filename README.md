@@ -13,11 +13,16 @@ Below is a list of the contests I've participated in, along with links to the co
 solutions. For each contest, I also indicate how many problems I solved during the official contest time and after the
 contest.
 
-| Link to Contest                                                         | Link to Solutions                          | Participated | Solved (During Contest) | Solved (After Contest) |
-|-------------------------------------------------------------------------|--------------------------------------------|--------------|-------------------------|------------------------|
-| [Educational Codeforces Round 170](https://codeforces.com/contest/2025) | [Solutions](./src/prohladenn/vko/edu170)   | ✅            | AB (2/7)                | C (3/7)                |
-| [Codeforces Round 979](https://codeforces.com/contest/2030)             | [Solutions](./src/prohladenn/vko/round979) | ✅            | ABC (3/7)               | D (4/7)                |
-| [Codeforces Round 980](https://codeforces.com/contest/2023)             | N/A                                        | ❌            | N/A                     |                        |
+| Link to Contest                                                               | Link to Solutions                          | Participated | Solved (During Contest) | Solved (After Contest) |
+|-------------------------------------------------------------------------------|--------------------------------------------|--------------|-------------------------|------------------------|
+| [Educational Codeforces Round 170](https://codeforces.com/contest/2025)       | [Solutions](./src/prohladenn/vko/edu170)   | ✅            | AB (2/7)                | C (3/7)                |
+| [Codeforces Round 979](https://codeforces.com/contest/2030)                   | [Solutions](./src/prohladenn/vko/round979) | ✅            | ABC (3/7)               | D (4/7)                |
+| [Codeforces Round 980](https://codeforces.com/contest/2023)                   | [Solutions](./src/prohladenn/vko/round980) | ✅            | ABC (3/6)               |                        |
+| [Codeforces Round ID=2033 24,10](https://codeforces.com/contest/2033)         |                                            | ⏰            |                         |                        |
+| [Codeforces Round ID=2027 26.10](https://codeforces.com/contest/2027)         |                                            | ⏰            |                         |                        |
+| [Educational Codeforces Round 171 28.10](https://codeforces.com/contest/2026) |                                            | ⏰            |                         |                        |
+
+[//]: # (✅❌⏰)
 
 ## How to Use This Repository
 
