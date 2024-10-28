@@ -1,4 +1,4 @@
-package prohladenn.vko._template;
+package prohladenn.vko.edu171;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,11 +6,51 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class Problem {
+public class ProblemB {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
         PrintWriter out = new PrintWriter(System.out);
+
+        int t = fs.nextInt();
+        while (t-- > 0) {
+            int n = fs.nextInt();
+            long[] a = fs.readArrayL(n);
+
+            if (n == 1) {
+                out.println(1);
+                continue;
+            }
+
+            if (n % 2 == 0) {
+                long max = Long.MIN_VALUE;
+                for (int i = 0; i < n; i += 2) {
+                    max = Math.max(max, a[i + 1] - a[i]);
+                }
+                out.println(max);
+                continue;
+            }
+
+            long min = Long.MAX_VALUE;
+            for (int ignr = 0; ignr < n; ignr++) {
+                int start = -1;
+                long max = Long.MIN_VALUE;
+                for (int i = 0; i < n; i++) {
+                    if (ignr == i) {
+                        continue;
+                    }
+                    if (start == -1) {
+                        start = i;
+                    } else {
+                        max = Math.max(max, a[i] - a[start]);
+                        start = -1;
+                    }
+                }
+                min = Math.min(min, max);
+            }
+
+            out.println(min);
+        }
 
         out.close();
     }

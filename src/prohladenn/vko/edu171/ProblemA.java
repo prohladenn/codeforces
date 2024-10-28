@@ -1,4 +1,4 @@
-package prohladenn.vko._template;
+package prohladenn.vko.edu171;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,11 +6,23 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class Problem {
+public class ProblemA {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
         PrintWriter out = new PrintWriter(System.out);
+
+        int t = fs.nextInt();
+        while (t-- > 0) {
+            int x = fs.nextInt();
+            int y = fs.nextInt();
+            int k = fs.nextInt();
+
+            int min = Math.min(x, y);
+
+            out.println(0 + " " + 0 + " " + min + " " + min);
+            out.println(0 + " " + min + " " + min + " " + 0);
+        }
 
         out.close();
     }
@@ -41,13 +53,6 @@ public class Problem {
 
         long nextLong() {
             return Long.parseLong(next());
-        }
-
-        long[] readArrayL(int n) {
-            long[] a = new long[n];
-            for (int i = 0; i < n; i++)
-                a[i] = nextLong();
-            return a;
         }
     }
 }
