@@ -32,7 +32,7 @@ public class ProblemB {
             }
 
             long min = Long.MAX_VALUE;
-            for (int ignr = 0; ignr < n; ignr++) {
+            for (int ignr = 0; ignr < n; ignr += 2) {
                 int start = -1;
                 long max = Long.MIN_VALUE;
                 for (int i = 0; i < n; i++) {
