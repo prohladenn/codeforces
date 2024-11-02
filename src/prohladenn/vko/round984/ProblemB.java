@@ -1,12 +1,16 @@
-package prohladenn.vko._template;
+package prohladenn.vko.round984;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Map;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
-public class Problem {
+public class ProblemB {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
@@ -14,10 +18,28 @@ public class Problem {
 
         int t = fs.nextInt();
         while (t-- > 0) {
-            // solution
+            int n = fs.nextInt();
+            int k = fs.nextInt();
+            Bottle[] bottles = new Bottle[k];
+            for (int i = 0; i < k; i++) {
+                bottles[i] = new Bottle(fs.nextInt(), fs.nextInt());
+            }
+
+            int ans = Arrays.stream(bottles)
+                    .collect(Collectors.groupingBy(Bottle::brand, Collectors.summingInt(Bottle::capacity)))
+                    .entrySet().stream()
+                    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                    .limit(n)
+                    .mapToInt(Map.Entry::getValue)
+                    .sum();
+
+            out.println(ans);
         }
 
         out.close();
+    }
+
+    record Bottle(int brand, int capacity) {
     }
 
     static class FastScanner {

@@ -1,12 +1,13 @@
-package prohladenn.vko._template;
+package prohladenn.vko.edu171;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Problem {
+public class ProblemC_ImplReq {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
@@ -14,7 +15,40 @@ public class Problem {
 
         int t = fs.nextInt();
         while (t-- > 0) {
-            // solution
+            int n = fs.nextInt();
+            char[] a = fs.next().toCharArray();
+
+            boolean[] b = new boolean[n];
+            Arrays.fill(b, false);
+
+            if (n == 1) {
+                out.println(1);
+                continue;
+            }
+
+            int sum = 0, j = n - 2;
+            for (int i = n - 1; i > 0; i--) {
+                if (a[i] == '1') {
+                    while (j >= 0 && a[j] == '1') {
+                        j--;
+                    }
+                    if (j > 0) {
+                        b[i] = true;
+                        b[j] = true;
+                        sum += j + 1;
+                        out.println("Adding1 " + (j + 1) + "(" + (i + 1) + ")");
+                        j--;
+                    }
+                } else {
+                    if (!b[i]) {
+                        b[i] = true;
+                        sum += i + 1;
+                        out.println("Adding2 " + (i + 1));
+                    }
+                }
+            }
+
+            out.println(sum);
         }
 
         out.close();

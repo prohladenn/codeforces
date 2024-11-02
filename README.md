@@ -17,11 +17,12 @@ contest.
 |-------------------------------------------------------------------------|--------------------------------------------|--------------|-------------------------|------------------------|
 | [Educational Codeforces Round 170](https://codeforces.com/contest/2025) | [Solutions](./src/prohladenn/vko/edu170)   | ✅            | AB (2/7)                | C (3/7)                |
 | [Codeforces Round 979](https://codeforces.com/contest/2030)             | [Solutions](./src/prohladenn/vko/round979) | ✅            | ABC (3/7)               | D (4/7)                |
-| [Codeforces Round 980](https://codeforces.com/contest/2023)             | [Solutions](./src/prohladenn/vko/round980) | ✅            | ABC (3/6)               |                        |
+| [Codeforces Round 980](https://codeforces.com/contest/2023)             | [Solutions](./src/prohladenn/vko/round980) | ✅            | ABC (3/6)               | _ (3/6)                |
 | [Codeforces Round 981](https://codeforces.com/contest/2033)             |                                            | ❌            | N/A                     |                        |
 | [Codeforces Round 982](https://codeforces.com/contest/2027)             |                                            | ❌            | N/A                     |                        |
 | [Educational Codeforces Round 171](https://codeforces.com/contest/2026) | [Solutions](./src/prohladenn/vko/edu171)   | ✅            | A (1/6)                 | B (2/6)                |
-| [Codeforces Round 983](https://codeforces.com/contest/2032)             |                                            | ❌            | N/A                     |                        |
+| [Codeforces Round 983](https://codeforces.com/contest/2032)             | [Solutions](./src/prohladenn/vko/round983) | ✅            | A (1/6)                 | B (2/6)                |
+| [Codeforces Round 984](https://codeforces.com/contest/2036)             | [Solutions](./src/prohladenn/vko/round984) | ✅            | ABCD (4/7)              | _ (4/7)                |
 
 [//]: # (✅❌⏰)
 

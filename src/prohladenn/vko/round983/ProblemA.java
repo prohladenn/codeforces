@@ -1,4 +1,4 @@
-package prohladenn.vko._template;
+package prohladenn.vko.round983;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class Problem {
+public class ProblemA {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
@@ -14,7 +14,15 @@ public class Problem {
 
         int t = fs.nextInt();
         while (t-- > 0) {
-            // solution
+            int n = fs.nextInt();
+            int a = 0;
+            for (int i = 0; i < 2 * n; i++) {
+                if (fs.nextInt() == 1) {
+                    a++;
+                }
+            }
+
+            out.println(a % 2 + " " + Math.min(a, 2 * n - a));
         }
 
         out.close();

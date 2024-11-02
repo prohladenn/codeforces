@@ -1,12 +1,13 @@
-package prohladenn.vko._template;
+package prohladenn.vko.round984;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.HashSet;
 import java.util.StringTokenizer;
 
-public class Problem {
+public class ProblemC {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
@@ -14,7 +15,35 @@ public class Problem {
 
         int t = fs.nextInt();
         while (t-- > 0) {
-            // solution
+            char[] s = fs.next().toCharArray();
+            boolean[] b = new boolean[s.length];
+            for (int i = 0; i < s.length; i++) {
+                b[i] = s[i] == '1';
+            }
+
+            HashSet<Integer> ends = new HashSet<>(s.length);
+            for (int i = 3; i < b.length; i++) {
+                if (b[i - 3] && b[i - 2] && !b[i - 1] && !b[i]) {
+                    ends.add(i);
+                }
+            }
+
+            int q = fs.nextInt();
+            while (q-- > 0) {
+                int i = fs.nextInt();
+
+                b[i - 1] = fs.nextInt() == 1;
+
+                for (int j = Math.max(3, i - 3); j < Math.min(b.length, i + 4); j++) {
+                    if (b[j - 3] && b[j - 2] && !b[j - 1] && !b[j]) {
+                        ends.add(j);
+                    } else {
+                        ends.remove(j);
+                    }
+                }
+
+                out.println(!ends.isEmpty() ? "YES " : "NO");
+            }
         }
 
         out.close();
