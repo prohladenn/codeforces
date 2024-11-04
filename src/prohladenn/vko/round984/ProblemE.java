@@ -4,11 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
-import java.util.function.Predicate;
 
-public class ProblemE_OptimizationReq {
+public class ProblemE {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
@@ -41,38 +39,23 @@ public class ProblemE_OptimizationReq {
             int m = fs.nextInt();
             //out.println(m);
 
-            ArrayList<Predicate<Integer>> predicates = new ArrayList<>();
-
+            int min = 0, max = n - 1;
             while (m-- > 0) {
                 int r = fs.nextInt();
                 char o = fs.next().charAt(0);
                 int c = fs.nextInt();
 
-                //out.println(r + " " + o + " " + c);
-
-                predicates.add(row -> (o == '>')
-                        ? b[row][r - 1] > c
-                        : b[row][r - 1] < c);
-            }
-
-            boolean ok = true;
-            for (int row = 0; row < n; row++) {
-                ok = true;
-
-                for (Predicate<Integer> predicate : predicates) {
-                    if (!predicate.test(row)) {
-                        ok = false;
-                        break;
-                    }
-                }
-
-                if (ok) {
-                    out.println(row + 1);
-                    break;
+                if (o == '>') {
+                    min = Math.max(min, bsMoreThan(b,r - 1, c));
+                } else {
+                    max = Math.min(max, bsLessThan(b, r - 1, c));
                 }
             }
-            if (!ok) {
+
+            if (min > max) {
                 out.println(-1);
+            } else {
+                out.println(min + 1);
             }
         }
 
@@ -86,6 +69,36 @@ public class ProblemE_OptimizationReq {
             }
             out.println();
         }
+    }
+
+    static int bsMoreThan(int[][] b, int column, int value) {
+        int l = 0, r = b.length - 1;
+        int ans = b.length;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if (b[mid][column] > value) {
+                ans = mid;
+                r = mid - 1;
+            } else {
+                l = mid + 1;
+            }
+        }
+        return ans;
+    }
+
+    static int bsLessThan(int[][] b, int column, int value) {
+        int l = 0, r = b.length - 1;
+        int ans = -1;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if (b[mid][column] < value) {
+                ans = mid;
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        return ans;
     }
 
     static class FastScanner {
