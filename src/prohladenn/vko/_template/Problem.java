@@ -17,15 +17,15 @@ public class Problem {
         out.close();
     }
 
-    static void solve() throws Exception {
+    private static void solve() throws Exception {
         out.println(in.nextLine());
     }
 
-    static class FastInputReader {
-        static BufferedReader reader;
-        static StringTokenizer tokenizer;
+    private static class FastInputReader {
+        private static BufferedReader reader;
+        private static StringTokenizer tokenizer;
 
-        public FastInputReader() {
+        FastInputReader() {
             reader = new BufferedReader(new InputStreamReader(System.in));
         }
 
@@ -103,7 +103,7 @@ public class Problem {
         }
     }
 
-    static class NumberUtils {
+    private static class NumberUtils {
         static long gcd(long a, long b) {
             BigInteger bigA = BigInteger.valueOf(a);
             BigInteger bigB = BigInteger.valueOf(b);
