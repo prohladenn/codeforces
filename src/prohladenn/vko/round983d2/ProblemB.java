@@ -1,4 +1,4 @@
-package prohladenn.vko.round979;
+package prohladenn.vko.round983d2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,19 +13,28 @@ public class ProblemB {
         PrintWriter out = new PrintWriter(System.out);
 
         int t = fs.nextInt();
-
         while (t-- > 0) {
             int n = fs.nextInt();
+            int k = fs.nextInt();
 
             if (n == 1) {
-                out.println(0);
+                out.println(1);
+                out.println(1);
                 continue;
             }
 
-            for (int i = 0; i < n - 1; i++) {
-                out.print(0);
+            if (k == 1 || k == n) {
+                out.println(-1);
+                continue;
             }
-            out.println(1);
+
+            boolean isEven = k % 2 == 0;
+            out.println(3);
+            out.print(1);
+            out.print(" ");
+            out.print(isEven ? k : k - 1);
+            out.print(" ");
+            out.println(isEven ? k + 1 : k + 2);
         }
 
         out.close();
@@ -57,6 +66,13 @@ public class ProblemB {
 
         long nextLong() {
             return Long.parseLong(next());
+        }
+
+        long[] readArrayL(int n) {
+            long[] a = new long[n];
+            for (int i = 0; i < n; i++)
+                a[i] = nextLong();
+            return a;
         }
     }
 }

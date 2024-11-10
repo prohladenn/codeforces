@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class ProblemD_OptimizationReq {
+public class ProblemD_OptReq {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();

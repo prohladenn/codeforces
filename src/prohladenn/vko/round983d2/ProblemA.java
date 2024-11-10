@@ -1,4 +1,4 @@
-package prohladenn.vko.round980;
+package prohladenn.vko.round983d2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,16 +14,17 @@ public class ProblemA {
 
         int t = fs.nextInt();
         while (t-- > 0) {
-            int a = fs.nextInt();
-            int b = fs.nextInt();
-
-            if (a > b) {
-                out.println(a);
-                continue;
+            int n = fs.nextInt();
+            int a = 0;
+            for (int i = 0; i < 2 * n; i++) {
+                if (fs.nextInt() == 1) {
+                    a++;
+                }
             }
 
-            out.println(Math.max(0, 2 * a - b));
+            out.println(a % 2 + " " + Math.min(a, 2 * n - a));
         }
+
         out.close();
     }
 
@@ -53,6 +54,13 @@ public class ProblemA {
 
         long nextLong() {
             return Long.parseLong(next());
+        }
+
+        long[] readArrayL(int n) {
+            long[] a = new long[n];
+            for (int i = 0; i < n; i++)
+                a[i] = nextLong();
+            return a;
         }
     }
 }

@@ -1,4 +1,4 @@
-package prohladenn.vko.round984;
+package prohladenn.vko.round979d2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,30 +6,29 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class ProblemA {
+public class ProblemB {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
         PrintWriter out = new PrintWriter(System.out);
 
         int t = fs.nextInt();
+
         while (t-- > 0) {
             int n = fs.nextInt();
-            int[] a = fs.readArray(n);
-            out.println(solve(a) ? "YES" : "NO");
+
+            if (n == 1) {
+                out.println(0);
+                continue;
+            }
+
+            for (int i = 0; i < n - 1; i++) {
+                out.print(0);
+            }
+            out.println(1);
         }
 
         out.close();
-    }
-
-    static boolean solve(int[] a) {
-        for (int i = 1; i < a.length; i++) {
-            int diff = Math.abs(a[i] - a[i - 1]);
-            if (diff != 5 && diff != 7) {
-                return false;
-            }
-        }
-        return true;
     }
 
     static class FastScanner {
@@ -58,13 +57,6 @@ public class ProblemA {
 
         long nextLong() {
             return Long.parseLong(next());
-        }
-
-        long[] readArrayL(int n) {
-            long[] a = new long[n];
-            for (int i = 0; i < n; i++)
-                a[i] = nextLong();
-            return a;
         }
     }
 }

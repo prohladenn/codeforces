@@ -1,4 +1,4 @@
-package prohladenn.vko.round983;
+package prohladenn.vko.round984d3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-public class ProblemB {
+public class ProblemA {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
@@ -15,29 +15,21 @@ public class ProblemB {
         int t = fs.nextInt();
         while (t-- > 0) {
             int n = fs.nextInt();
-            int k = fs.nextInt();
-
-            if (n == 1) {
-                out.println(1);
-                out.println(1);
-                continue;
-            }
-
-            if (k == 1 || k == n) {
-                out.println(-1);
-                continue;
-            }
-
-            boolean isEven = k % 2 == 0;
-            out.println(3);
-            out.print(1);
-            out.print(" ");
-            out.print(isEven ? k : k - 1);
-            out.print(" ");
-            out.println(isEven ? k + 1 : k + 2);
+            int[] a = fs.readArray(n);
+            out.println(solve(a) ? "YES" : "NO");
         }
 
         out.close();
+    }
+
+    static boolean solve(int[] a) {
+        for (int i = 1; i < a.length; i++) {
+            int diff = Math.abs(a[i] - a[i - 1]);
+            if (diff != 5 && diff != 7) {
+                return false;
+            }
+        }
+        return true;
     }
 
     static class FastScanner {

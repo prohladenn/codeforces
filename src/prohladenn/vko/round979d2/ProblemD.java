@@ -1,4 +1,4 @@
-package prohladenn.vko.round979;
+package prohladenn.vko.round979d2;
 
 import java.io.BufferedReader;
 import java.io.IOException;

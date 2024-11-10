@@ -1,35 +1,42 @@
-package prohladenn.vko.round979;
+package prohladenn.vko.round979d2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class ProblemA {
+public class ProblemC {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
         PrintWriter out = new PrintWriter(System.out);
 
-        int t = fs.nextInt();
+        String yes = "YES", no = "NO";
 
+        int t = fs.nextInt();
         while (t-- > 0) {
             int n = fs.nextInt();
-            int[] a = fs.readArray(n);
-
-            Arrays.sort(a);
-
-            int min = a[0];
-            int max = a[n - 1];
-
-            // [max, min, a1, a2, ...]
-
-            out.println((max - min) * (n - 1));
+            String s = fs.next();
+            out.println(solve(n, s) ? yes : no);
         }
 
         out.close();
+    }
+
+    static boolean solve(int n, String s) {
+
+        if (s.charAt(0) == '1' || s.charAt(n - 1) == '1') {
+            return true;
+        }
+
+        for (int i = 0; i < n - 1; i++) {
+            if (s.charAt(i) == '1' && s.charAt(i + 1) == '1') {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     static class FastScanner {

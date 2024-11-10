@@ -1,13 +1,16 @@
-package prohladenn.vko.round984;
+package prohladenn.vko.round984d3;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.HashSet;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Map;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
-public class ProblemC {
+public class ProblemB {
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
@@ -15,38 +18,28 @@ public class ProblemC {
 
         int t = fs.nextInt();
         while (t-- > 0) {
-            char[] s = fs.next().toCharArray();
-            boolean[] b = new boolean[s.length];
-            for (int i = 0; i < s.length; i++) {
-                b[i] = s[i] == '1';
+            int n = fs.nextInt();
+            int k = fs.nextInt();
+            Bottle[] bottles = new Bottle[k];
+            for (int i = 0; i < k; i++) {
+                bottles[i] = new Bottle(fs.nextInt(), fs.nextInt());
             }
 
-            HashSet<Integer> ends = new HashSet<>(s.length);
-            for (int i = 3; i < b.length; i++) {
-                if (b[i - 3] && b[i - 2] && !b[i - 1] && !b[i]) {
-                    ends.add(i);
-                }
-            }
+            int ans = Arrays.stream(bottles)
+                    .collect(Collectors.groupingBy(Bottle::brand, Collectors.summingInt(Bottle::capacity)))
+                    .entrySet().stream()
+                    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                    .limit(n)
+                    .mapToInt(Map.Entry::getValue)
+                    .sum();
 
-            int q = fs.nextInt();
-            while (q-- > 0) {
-                int i = fs.nextInt();
-
-                b[i - 1] = fs.nextInt() == 1;
-
-                for (int j = Math.max(3, i - 3); j < Math.min(b.length, i + 4); j++) {
-                    if (b[j - 3] && b[j - 2] && !b[j - 1] && !b[j]) {
-                        ends.add(j);
-                    } else {
-                        ends.remove(j);
-                    }
-                }
-
-                out.println(!ends.isEmpty() ? "YES " : "NO");
-            }
+            out.println(ans);
         }
 
         out.close();
+    }
+
+    record Bottle(int brand, int capacity) {
     }
 
     static class FastScanner {

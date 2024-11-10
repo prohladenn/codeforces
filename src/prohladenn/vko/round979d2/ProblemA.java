@@ -1,9 +1,10 @@
-package prohladenn.vko.round983;
+package prohladenn.vko.round979d2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class ProblemA {
@@ -13,16 +14,19 @@ public class ProblemA {
         PrintWriter out = new PrintWriter(System.out);
 
         int t = fs.nextInt();
+
         while (t-- > 0) {
             int n = fs.nextInt();
-            int a = 0;
-            for (int i = 0; i < 2 * n; i++) {
-                if (fs.nextInt() == 1) {
-                    a++;
-                }
-            }
+            int[] a = fs.readArray(n);
 
-            out.println(a % 2 + " " + Math.min(a, 2 * n - a));
+            Arrays.sort(a);
+
+            int min = a[0];
+            int max = a[n - 1];
+
+            // [max, min, a1, a2, ...]
+
+            out.println((max - min) * (n - 1));
         }
 
         out.close();
@@ -54,13 +58,6 @@ public class ProblemA {
 
         long nextLong() {
             return Long.parseLong(next());
-        }
-
-        long[] readArrayL(int n) {
-            long[] a = new long[n];
-            for (int i = 0; i < n; i++)
-                a[i] = nextLong();
-            return a;
         }
     }
 }

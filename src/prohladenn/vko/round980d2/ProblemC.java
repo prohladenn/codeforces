@@ -1,13 +1,24 @@
-package prohladenn.vko.round980;
+package prohladenn.vko.round980d2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.StringTokenizer;
 
-public class ProblemB {
+public class ProblemC {
+
+    record Pair(int x, int y) {
+        int min() {
+            return Math.min(x, y);
+        }
+
+        int max() {
+            return Math.max(x, y);
+        }
+    }
 
     public static void main(String[] args) {
         FastScanner fs = new FastScanner();
@@ -16,42 +27,19 @@ public class ProblemB {
         int t = fs.nextInt();
         while (t-- > 0) {
             int n = fs.nextInt();
-            int k = fs.nextInt();
-            int[] a = fs.readArray(n);
-
-            Arrays.sort(a);
-
-            int min = a[0];
-            if ((long) min * n >= k) {
-                out.println(k);
-                continue;
+            Pair[] p = new Pair[n];
+            for (int i = 0; i < n; i++) {
+                p[i] = new Pair(fs.nextInt(), fs.nextInt());
             }
 
-            long sum = (long) min * n;
-            long pres = (long) min * n + 1;
+            Arrays.sort(p, Comparator.comparingInt(Pair::min).thenComparing(Pair::max));
 
-            for (int i = 1; i < n; i++) {
-
-                if (a[i] == a[i - 1]) {
-                    pres++;
-                    continue;
-                }
-
-                long rowValue = (long) (a[i] - a[i - 1]) * (n - i);
-
-                if (sum + rowValue >= k) {
-                    pres += k - sum;
-                    break;
-                }
-
-                sum += rowValue;
-                pres += rowValue;
-                pres++;
+            for (int i = 0; i < n; i++) {
+                out.print(p[i].x + " " + p[i].y + " ");
             }
 
-            out.println(pres);
+            out.println();
         }
-
         out.close();
     }
 

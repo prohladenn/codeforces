@@ -13,16 +13,17 @@ Below is a list of the contests I've participated in, along with links to the co
 solutions. For each contest, I also indicate how many problems I solved during the official contest time and after the
 contest.
 
-| Link to Contest                                                         | Link to Solutions                          | Participated | Solved (During Contest) | Solved (After Contest) |
-|-------------------------------------------------------------------------|--------------------------------------------|--------------|-------------------------|------------------------|
-| [Educational Codeforces Round 170](https://codeforces.com/contest/2025) | [Solutions](./src/prohladenn/vko/edu170)   | ✅            | AB (2/7)                | C (3/7)                |
-| [Codeforces Round 979](https://codeforces.com/contest/2030)             | [Solutions](./src/prohladenn/vko/round979) | ✅            | ABC (3/7)               | D (4/7)                |
-| [Codeforces Round 980](https://codeforces.com/contest/2023)             | [Solutions](./src/prohladenn/vko/round980) | ✅            | ABC (3/6)               | _ (3/6)                |
-| [Codeforces Round 981](https://codeforces.com/contest/2033)             |                                            | ❌            | N/A                     |                        |
-| [Codeforces Round 982](https://codeforces.com/contest/2027)             |                                            | ❌            | N/A                     |                        |
-| [Educational Codeforces Round 171](https://codeforces.com/contest/2026) | [Solutions](./src/prohladenn/vko/edu171)   | ✅            | A (1/6)                 | B (2/6)                |
-| [Codeforces Round 983](https://codeforces.com/contest/2032)             | [Solutions](./src/prohladenn/vko/round983) | ✅            | A (1/6)                 | B (2/6)                |
-| [Codeforces Round 984](https://codeforces.com/contest/2036)             | [Solutions](./src/prohladenn/vko/round984) | ✅            | ABCD (4/7)              | E (5/7)                |
+| Link to Contest                                                         | Link to Solutions                            | Participated | Solved (During Contest) | Solved (After Contest) |
+|-------------------------------------------------------------------------|----------------------------------------------|--------------|-------------------------|------------------------|
+| [Educational Codeforces Round 170](https://codeforces.com/contest/2025) | [Solutions](./src/prohladenn/vko/edu170)     | ✅            | AB (2/7)                | C (3/7)                |
+| [Codeforces Round 979](https://codeforces.com/contest/2030)             | [Solutions](./src/prohladenn/vko/round979d2) | ✅            | ABC (3/8)               | D (4/8)                |
+| [Codeforces Round 980](https://codeforces.com/contest/2023)             | [Solutions](./src/prohladenn/vko/round980d2) | ✅            | ABC (3/6)               | _ (3/6)                |
+| [Codeforces Round 981](https://codeforces.com/contest/2033)             | [Solutions](./src/prohladenn/vko/round981d3) | ❌            | N/A                     | A (1/7)                |
+| [Codeforces Round 982](https://codeforces.com/contest/2027)             | [Solutions](./src/prohladenn/vko/round982d2) | ❌            | N/A                     | A (1/7)                |
+| [Educational Codeforces Round 171](https://codeforces.com/contest/2026) | [Solutions](./src/prohladenn/vko/edu171)     | ✅            | A (1/6)                 | B (2/6)                |
+| [Codeforces Round 983](https://codeforces.com/contest/2032)             | [Solutions](./src/prohladenn/vko/round983d2) | ✅            | A (1/6)                 | B (2/6)                |
+| [Codeforces Round 984](https://codeforces.com/contest/2036)             | [Solutions](./src/prohladenn/vko/round984d3) | ✅            | ABCD (4/7)              | E (5/7)                |
+| [Codeforces Round 986](https://codeforces.com/contest/2028)             | [Solutions](./src/prohladenn/vko/round986d2) | ✅            | A (1/6)                 | _ (1/7)                |
 
 [//]: # (✅❌⏰)
 
