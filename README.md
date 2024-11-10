@@ -23,7 +23,7 @@ contest.
 | [Educational Codeforces Round 171](https://codeforces.com/contest/2026) | [Solutions](./src/prohladenn/vko/edu171)     | ✅            | A (1/6)                 | B (2/6)                |
 | [Codeforces Round 983](https://codeforces.com/contest/2032)             | [Solutions](./src/prohladenn/vko/round983d2) | ✅            | A (1/6)                 | B (2/6)                |
 | [Codeforces Round 984](https://codeforces.com/contest/2036)             | [Solutions](./src/prohladenn/vko/round984d3) | ✅            | ABCD (4/7)              | E (5/7)                |
-| [Codeforces Round 986](https://codeforces.com/contest/2028)             | [Solutions](./src/prohladenn/vko/round986d2) | ✅            | A (1/6)                 | _ (1/7)                |
+| [Codeforces Round 986](https://codeforces.com/contest/2028)             | [Solutions](./src/prohladenn/vko/round986d2) | ✅            | A (1/6)                 | B (2/6)                |
 
 [//]: # (✅❌⏰)
 

@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
-public class ProblemB_fixReq {
+public class ProblemB {
     static FastInputReader in = new FastInputReader();
     static PrintWriter out = new PrintWriter(System.out);
 
@@ -20,35 +20,19 @@ public class ProblemB_fixReq {
     private static void solve() throws Exception {
         long n = in.nextLong(), b = in.nextLong(), c = in.nextLong();
 
-        out.println(minOperations(n, b, c));
-    }
-
-    public static String minOperations(long n, long b, long c) {
         if (b == 0) {
-            if (c > n - 1) {
-                return String.valueOf(n);
+            if (c >= n) {
+                out.println(n);
+            } else if (c == n - 1 || c == n - 2) {
+                out.println(n - 1);
             } else {
-                if (n == 1) {
-                    return "0";
-                } else {
-                    if (c == 0) {
-                        return "-1";
-                    } else {
-                        return String.valueOf(n - 1);
-                    }
-                }
+                out.println(-1);
             }
-        } else {
-            long iStart = Math.max(1, Math.ceilDiv(-c, b) + 1);
-            long iEnd = Math.min(n, Math.floorDiv(n - 1 - c, b) + 1);
-
-            long elementsInRange = Math.max(0, iEnd - iStart + 1);
-            if (elementsInRange == n) {
-                return "0";
-            } else {
-                return String.valueOf(n - elementsInRange);
-            }
+            return;
         }
+
+        long iMax = (n - c - 1 >= 0) ? (n - c - 1) / b + 1 : 0;
+        out.println(n - iMax);
     }
 
     private static class FastInputReader {
