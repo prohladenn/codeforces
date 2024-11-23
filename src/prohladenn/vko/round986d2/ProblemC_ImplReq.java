@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
-public class ProblemC_implReq {
+public class ProblemC_ImplReq {
     static FastInputReader in = new FastInputReader();
     static PrintWriter out = new PrintWriter(System.out);
 
@@ -113,32 +113,6 @@ public class ProblemC_implReq {
             String[] arr = new String[n];
             for (int i = 0; i < n; i++) arr[i] = next();
             return arr;
-        }
-    }
-
-    private static class NumberUtils {
-        static long gcd(long a, long b) {
-            BigInteger bigA = BigInteger.valueOf(a);
-            BigInteger bigB = BigInteger.valueOf(b);
-            return bigA.gcd(bigB).longValue();
-        }
-
-        public static int gcd(int a, int b) {
-            BigInteger bigA = BigInteger.valueOf(a);
-            BigInteger bigB = BigInteger.valueOf(b);
-            return bigA.gcd(bigB).intValue();
-        }
-
-        public static long lcm(long a, long b) {
-            BigInteger bigA = BigInteger.valueOf(a);
-            BigInteger bigB = BigInteger.valueOf(b);
-            return bigA.divide(bigA.gcd(bigB)).multiply(bigB).longValue();
-        }
-
-        public static int lcm(int a, int b) {
-            BigInteger bigA = BigInteger.valueOf(a);
-            BigInteger bigB = BigInteger.valueOf(b);
-            return bigA.divide(bigA.gcd(bigB)).multiply(bigB).intValue();
         }
     }
 }

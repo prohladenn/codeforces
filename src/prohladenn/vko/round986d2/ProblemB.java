@@ -116,30 +116,4 @@ public class ProblemB {
             return arr;
         }
     }
-
-    private static class NumberUtils {
-        static long gcd(long a, long b) {
-            BigInteger bigA = BigInteger.valueOf(a);
-            BigInteger bigB = BigInteger.valueOf(b);
-            return bigA.gcd(bigB).longValue();
-        }
-
-        public static int gcd(int a, int b) {
-            BigInteger bigA = BigInteger.valueOf(a);
-            BigInteger bigB = BigInteger.valueOf(b);
-            return bigA.gcd(bigB).intValue();
-        }
-
-        public static long lcm(long a, long b) {
-            BigInteger bigA = BigInteger.valueOf(a);
-            BigInteger bigB = BigInteger.valueOf(b);
-            return bigA.divide(bigA.gcd(bigB)).multiply(bigB).longValue();
-        }
-
-        public static int lcm(int a, int b) {
-            BigInteger bigA = BigInteger.valueOf(a);
-            BigInteger bigB = BigInteger.valueOf(b);
-            return bigA.divide(bigA.gcd(bigB)).multiply(bigB).intValue();
-        }
-    }
 }
